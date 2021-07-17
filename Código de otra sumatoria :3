@@ -1,0 +1,8 @@
+#mihoi ivan robles saldivar
+import math
+def serie1(n):
+    s = 0
+    for i in range(1,n+1):
+        s =s+ (pow(3, pow(2, i-1))) / (1 - pow(3,pow(2,i))) 
+    return s  
+print(serie1(2))
