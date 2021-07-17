@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+main(){
+ char i;
+ cout<<"Este programa te imprime el abecedario :3"<<endl;
+ for(i='a'; i<'z'; i++){
+  cout<<i<<" ";
+ }
+}
