@@ -1,0 +1,27 @@
+class tarjeta:
+    def __init__(self, id, cantidad = 0):
+        self.id = id
+        self.saldo = cantidad
+        return
+    def mostrar_saldo(self):  
+        print('El saldo es {:.2f}$'.format(self.saldo))
+        return
+    def pagar(self, cantidad):
+        self.saldo = self.saldo - cantidad
+        return
+    
+class tarjeta_oro(tarjeta):
+    def __init__(self, id, descuento, cantidad = 0):
+        self.id = id
+        self.descuento = descuento
+        self.saldo = cantidad
+        return
+    def pagar(self, cantidad):
+        self.saldo = self.saldo - cantidad * (1 - self.descuento / 100)
+        return
+t1 = tarjeta('1111111', 1000)
+t2 =  tarjeta_oro('123456', 1, 1000)
+t1.pagar(100)
+t1.mostrar_saldo()
+t2.pagar(100)
+t2.mostrar_saldo()
