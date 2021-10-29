@@ -1,0 +1,30 @@
+#Algoritmo de euclides
+def mcd(m,n):
+    while m%n != 0:
+        mViejo = m
+        nViejo = n
+        m = nViejo
+        n = mViejo%nViejo
+    return n
+
+class fraccion:
+    def __init__(self,arriba,abajo):
+        self.num = arriba
+        self.den = abajo
+    def __str__(self):
+        return str(self.num)+"/"+str(self.den)
+    def __add__(self,otrafraccion):
+        nuevoNum = self.num*otrafraccion.den + self.den*otrafraccion.num
+        nuevoDen = self.den * otrafraccion.den
+        comun = mcd(nuevoNum,nuevoDen)
+        return fraccion(nuevoNum//comun,nuevoDen//comun)
+
+'''
+mif = fraccion(3,5)
+print(mif)
+print("Comí ", mif," de la pizza")
+'''
+f1 = fraccion(1,4)
+f2 = fraccion(1,2)
+f3 = f1 + f2
+print(f3)
